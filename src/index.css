@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --void: #0a0a0f;
+  --deep-space: #0d1117;
+  --nebula: #161b22;
+  --starlight: #c9d1d9;
+  --bright-star: #f0f6fc;
+  --quantum-blue: #58a6ff;
+  --plasma-cyan: #39c5cf;
+  --energy-purple: #a371f7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+  color: #1a1a1a;
+  overflow: hidden;
+}
+
+/* Мінімалістичний стиль як на фото */
+.dotted-border {
+  border: 1px dashed #d0d0d0;
+}
+
+.pixel-shadow {
+  box-shadow: 4px 4px 0 #e0e0e0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* Canvas grid pattern */
+.canvas-grid {
+  background-image: 
+    radial-gradient(circle, #ddd 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Retro pixel font effect */
+.pixel-text {
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+/* Block hover effect */
+.block-hover:hover {
+  box-shadow: 0 0 0 2px #58a6ff;
+}
+
+/* Selected state */
+.selected {
+  box-shadow: 0 0 0 2px #58a6ff, 0 0 10px rgba(88, 166, 255, 0.3);
+}
+
+/* Panel styles */
+.panel {
+  background: white;
+  border: 1px solid #e5e5e5;
+}
+
+/* Animation for flow */
+@keyframes flowPulse {
+  0% { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-flow {
+  animation: flowPulse 2s linear infinite;
+}
+
+/* Dithered/pixelated style like in the image */
+.dither-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h1v1H0V0zm2 0h1v1H2V0zm1 1h1v1H3V1zm-2 0h1v1H1V1zm0 2h1v1H1V3zm2 0h1v1H3V3zM0 2h1v1H0V2zm2 2h1v1H2V4z' fill='%23000' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Card style from the reference image */
+.feature-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  padding: 24px;
+  position: relative;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e0e0e0;
+  z-index: -1;
+}
