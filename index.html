@@ -11,6 +11,20 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript>Увімкни JavaScript для Spectra Studio.</noscript>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Якщо додаток не відмалювався (404 main.tsx або інша помилка) — показати підказку
+      setTimeout(function() {
+        var root = document.getElementById('root');
+        if (root && !root.hasChildNodes()) {
+          root.innerHTML = '<div style="font-family:system-ui;max-width:480px;margin:40px auto;padding:24px;color:#333;">' +
+            '<h1 style="font-size:1.25rem;">Spectra Studio не завантажився</h1>' +
+            '<p><strong>GitHub Pages:</strong> у репо Settings → Pages → Source має бути <strong>GitHub Actions</strong> (не Deploy from a branch). Потім push у main або ручний запуск workflow.</p>' +
+            '<p><strong>Локально:</strong> запусти <code style="background:#eee;padding:2px 6px;">npm run dev</code> і відкрий <code>http://localhost:3000</code>.</p>' +
+            '</div>';
+        }
+      }, 3000);
+    </script>
   </body>
 </html>
