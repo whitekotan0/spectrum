@@ -165,7 +165,7 @@ export default function Timeline() {
           {/* Block tracks preview */}
           {blocks.length > 0 && (
             <div className="absolute inset-x-0 bottom-0 h-4 flex items-center gap-1 px-1">
-              {blocks.slice(0, 5).map((block, i) => (
+              {blocks.slice(0, 5).map((block) => (
                 <div
                   key={block.id}
                   className="h-2 rounded text-[8px] flex items-center justify-center truncate"

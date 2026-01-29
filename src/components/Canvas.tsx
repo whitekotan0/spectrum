@@ -26,7 +26,6 @@ export default function Canvas() {
     setCanvasScale,
     addArrow,
     updateArrow,
-    deleteArrow,
     selectArrow,
     saveHistory,
     isPlaying,
@@ -140,14 +139,12 @@ export default function Canvas() {
     
     if (type === 'step') {
       const dx = to.x - from.x;
-      const dy = to.y - from.y;
       const midX = from.x + dx * 0.5;
       return `M ${from.x} ${from.y} L ${midX} ${from.y} L ${midX} ${to.y} L ${to.x} ${to.y}`;
     }
     
     // Curved (bezier)
     const dx = to.x - from.x;
-    const dy = to.y - from.y;
     
     // Control points for smooth curve
     const cp1x = from.x + dx * 0.5;
@@ -187,7 +184,6 @@ export default function Canvas() {
     
     if (type === 'step') {
       const dx = to.x - from.x;
-      const dy = to.y - from.y;
       const midX = from.x + dx * 0.5;
       
       if (t < 0.5) {
@@ -321,7 +317,7 @@ export default function Canvas() {
             clearSelection();
           }
         }}
-        onTap={(e) => {
+        onTap={() => {
           if (activeTool === 'select') {
             selectArrow(arrow.id);
             clearSelection();

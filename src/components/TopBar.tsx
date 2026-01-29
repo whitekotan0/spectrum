@@ -1,6 +1,5 @@
 import { 
   Download, 
-  Upload, 
   Undo2, 
   Redo2, 
   ZoomIn, 
